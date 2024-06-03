@@ -1,0 +1,78 @@
+#from turtle import Turtle
+#tim = Turtle()
+#tom = Turtle()
+# import random
+# from turtle import Turtle, Screen
+# turtle = Turtle()
+# turtle.shape("turtle")
+# turtle.color("red")
+# turtle.speed('slowest')
+
+# #Dashed line
+# for i in range(10):
+#     turtle.forward(10)
+#     turtle.penup()
+#     turtle.forward(10)
+#     turtle.pendown()
+#     turtle.forward(10)
+
+# #Drawing shapes
+# colours = ["yellow", "red", "black", "blue"]
+# for i in range(3, 10):
+#     turtle.color(random.choice(colours))
+#     turtle.home()
+#     ang = 360 / i
+#     for j in range(i):
+#         turtle.forward(100)
+#         turtle.right(ang)
+
+# def draw_shape(num_sides):
+#     angle = 360 / num_sides
+#     for _ in range(num_sides):
+#         turtle.forward(100)
+#         turtle.right(angle)
+#
+# for shape_side_n in range(3,11):
+#     turtle.color(random.choice(colours))
+#     draw_shape(shape_side_n)
+
+import random
+# from turtle import Turtle, Screen, colormode as t
+
+from turtle import Turtle, Screen, colormode
+import turtle as t
+tim = t.Turtle()
+
+tim.shape("turtle")
+tim.color("red")
+tim.speed('fastest')
+tim.pensize(1)
+
+#colours = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
+directions = [0, 90, 180, 270]
+t.colormode(255)
+def random_color():
+    r = random.randint(0,255)
+    g = random.randint(0,255)
+    b = random.randint(0,255)
+    color = (r,g,b)
+    return color
+
+# for _ in range(500):
+#     tim.forward(50)
+#     tim.setheading(random.choice(directions))
+#     tim.color(random_color())
+
+def draw_spirograph(size_of_gap):
+    for _ in range(int(360 / size_of_gap)):
+        tim.circle(100)
+        tim.setheading(tim.heading() + size_of_gap)
+        tim.color(random_color())
+
+
+draw_spirograph(10)
+screen = Screen()
+screen.exitonclick()
+
+
+
